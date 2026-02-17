@@ -16,8 +16,10 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import type { SearchResult } from "@/lib/types";
+import LogoLight from "@/gambar/logo-light-mode.svg";
 import Logo from "@/gambar/logo.svg";
+import { useTheme } from "next-themes";
+import type { SearchResult } from "@/lib/types";
 
 const navLinks = [
     { href: "/", label: "Beranda", icon: Home },
@@ -40,6 +42,16 @@ export function Navbar() {
     const debouncedQuery = useDebounce(query, 400);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+
+    const { theme, systemTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const currentTheme = theme === "system" ? systemTheme : theme;
+    const logoSrc = mounted && currentTheme === "light" ? LogoLight : Logo;
 
     // Fetch search results when debounced query changes
     useEffect(() => {
@@ -111,7 +123,7 @@ export function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 font-bold text-lg">
                     <Image
-                        src={Logo}
+                        src={logoSrc}
                         alt="Qomik"
                         width={32}
                         height={32}
@@ -243,7 +255,7 @@ export function Navbar() {
                         <SheetHeader>
                             <SheetTitle className="flex items-center gap-2">
                                 <Image
-                                    src={Logo}
+                                    src={logoSrc}
                                     alt="Qomik"
                                     width={24}
                                     height={24}
@@ -293,3 +305,6 @@ export function Navbar() {
         </header>
     );
 }
+
+
+

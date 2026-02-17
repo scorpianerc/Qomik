@@ -15,7 +15,6 @@ interface ComicCardProps {
     image: string;
     link: string;
     chapter?: string;
-    timeAgo?: string;
     type?: string;
     showFavorite?: boolean;
     detailImage?: string;
@@ -26,7 +25,6 @@ export function ComicCard({
     image,
     link,
     chapter,
-    timeAgo,
     type,
     showFavorite = true,
     detailImage,
@@ -100,9 +98,6 @@ export function ComicCard({
                     <div className="flex items-center justify-between mt-1.5">
                         {chapter && (
                             <span className="text-xs text-muted-foreground">{chapter}</span>
-                        )}
-                        {timeAgo && (
-                            <span className="text-xs text-muted-foreground">{timeAgo}</span>
                         )}
                     </div>
                 </CardContent>

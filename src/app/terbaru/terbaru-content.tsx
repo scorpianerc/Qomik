@@ -304,7 +304,6 @@ export function TerbaruContent({
                                     image={comic.image}
                                     link={comic.link}
                                     chapter={comic.chapter}
-                                    timeAgo={comic.time_ago}
                                     detailImage={detailImages[comic.slug]}
                                 />
                             ))}

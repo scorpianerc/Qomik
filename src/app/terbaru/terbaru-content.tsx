@@ -9,7 +9,6 @@ import {
     SlidersHorizontal,
     Loader2,
     Star,
-    X,
     ArrowLeft
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -54,7 +53,6 @@ export function TerbaruContent({
         hasSearched,
         setHasSearched,
         fetchComics,
-        fetchByStatus,
         toggleGenre,
         setStatusFilter,
         resetFilters,

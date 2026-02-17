@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import { BookOpen, Heart, Home, Menu, Search, Clock, Flame, Tag, Loader2, X } from "lucide-react";
+import { Heart, Home, Menu, Search, Clock, Flame, Tag, Loader2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "@/components/theme-toggle";

@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { ComicFilterCard } from "@/components/comic-filter-card";
 import { useComicFilter } from "@/hooks/use-comic-filter";
 import { useDetailImages } from "@/hooks/use-detail-images";
-import type { GenreItem, GenreComic, KomikStationComic } from "@/lib/types";
+import type { GenreItem } from "@/lib/types";
 
 interface GenreListContentProps {
     genres: GenreItem[];
@@ -218,8 +218,6 @@ export function GenreListContent({ genres }: GenreListContentProps) {
                                 {filteredComics.map((comic) => {
                                     let imageUrl: string | undefined;
                                     let rating: string | null = null;
-                                    let type: string | null = null;
-                                    // let chapter: string | undefined; // GenreComic doesn't usually show chapter in this view, but KomikStation does.
 
                                     if ("imageSrc" in comic) {
                                         // KomikStationComic

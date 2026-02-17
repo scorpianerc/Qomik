@@ -1,5 +1,4 @@
 import { useState, useCallback } from "react";
-import { getKomikStationList } from "@/lib/api";
 import type { GenreComic, KomikStationComic } from "@/lib/types";
 
 export function useComicFilter(
@@ -125,7 +124,7 @@ export function useComicFilter(
     const filteredComics = comics.filter((comic) => {
         // Safe check for 'status' property
         if (statusFilter !== "Semua") {
-            const c = comic as any;
+            const c = comic as unknown as Record<string, unknown>;
             if (c.status && typeof c.status === 'string') {
                 const s = c.status.toLowerCase();
                 if (statusFilter === "Ongoing" && s !== "ongoing") return false;
@@ -135,9 +134,6 @@ export function useComicFilter(
                 )
                     return false;
             } else {
-                // For status, sometimes it's missing in Recent list, but we are in Genre list which usually has it.
-                // If missing, excluding is safer for "Complete" filter, but for "Ongoing" it might hide valid ones?
-                // Let's stick to strict.
                 return true;
             }
         }

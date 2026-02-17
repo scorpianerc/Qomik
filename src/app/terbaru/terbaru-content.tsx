@@ -83,13 +83,10 @@ export function TerbaruContent({
     }
 
     // Helper logic for displaying filtered comics
-    let displayFilteredComics: (GenreComic | ComicWithSlug | KomikStationComic)[] = filteredComics;
+    const displayFilteredComics: (GenreComic | ComicWithSlug | KomikStationComic)[] = filteredComics;
 
     if (selectedGenres.length === 0 && activeFilterCount > 0) {
-        // use filteredComics as is, which now contains type-filtered results
-        // Status-only filter behavior for KomikStation logic preserved if needed
         if (statusFilter === "Semua") {
-            // Already handled by useComicFilter
         }
     }
 

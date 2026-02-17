@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ArrowLeft, Star, Tag, SlidersHorizontal, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { useDetailImages } from "@/hooks/use-detail-images";
 import { GenrePicker } from "@/components/genre-picker";
 import { ComicFilterCard } from "@/components/comic-filter-card";

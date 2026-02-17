@@ -27,7 +27,6 @@ export function ComicFilterCard({
     toggleGenre,
     statusFilter,
     setStatusFilter,
-    onApply,
     onReset,
     showStatus = true,
 }: ComicFilterCardProps) {
